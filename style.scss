@@ -48,7 +48,7 @@ body {
     margin: 0;
     width: 100%;
     background-color: #fff;
-    min-width: 320px;
+    //  min-width: 320px;
 }
 
 p {
@@ -59,16 +59,20 @@ a {
     text-decoration: none;
 }
 
+header{
+    padding: 0 64px;
+}
+
+
 .header {
     height: 76px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 64px;
+    
     border-bottom: 1px solid #dddddd;
     overflow: hidden;
     white-space: nowrap;
-
     &__logo {
         @include Monserrat-font(24px, #000000, 600, 1.33);
         //overflow: hidden;
@@ -114,6 +118,7 @@ a {
 
 button {
     height: 40px;
+    width: max-content;
     border-radius: 4px;
     background-color: #f7f7f7;
     border: none;
@@ -382,6 +387,12 @@ footer {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    header{
+        padding: 0px;
+    }
+}
+
 @media screen and (max-width: 996px) {
 
     .header {
@@ -403,6 +414,11 @@ footer {
 
     .header-block__img {
         display: none;
+    }
+
+    .button-container {
+        display: flex;
+        flex-flow: column;
     }
 
     .content-box_vidoe-tile {
@@ -427,7 +443,7 @@ footer {
     @mixin h3-font() {
         font-size: 18px;
     }
-    
+
     .header {
         &__logo {
             font-size: 18px;
@@ -440,18 +456,24 @@ footer {
         }
     }
 
+    .header-block {
+        padding-right: 6px;
+    }
+
     .case-header {
+        overflow: hidden;
+
         &__title {
             @include h3-font-mobile();
         }
 
         &__all {
             display: none;
+            white-space: nowrap;
         }
     }
 
     .mobile-header {
-        width: 30%;
         display: inherit;
     }
 
@@ -467,6 +489,14 @@ footer {
         &__doc-icon {
             padding-right: 9px;
         }
+
+        &__number {
+            padding-right: 8px;
+        }
+    }
+
+    .content-box_doc {
+        padding: 32px 0px 40px 0;
     }
 
     footer {

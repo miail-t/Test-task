@@ -2,7 +2,6 @@ body {
   margin: 0;
   width: 100%;
   background-color: #fff;
-  min-width: 320px;
 }
 
 p {
@@ -11,6 +10,10 @@ p {
 
 a {
   text-decoration: none;
+}
+
+header {
+  padding: 0 64px;
 }
 
 .header {
@@ -24,7 +27,6 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 64px;
   border-bottom: 1px solid #dddddd;
   overflow: hidden;
   white-space: nowrap;
@@ -89,6 +91,9 @@ a {
 
 button {
   height: 40px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   border-radius: 4px;
   background-color: #f7f7f7;
   border: none;
@@ -517,6 +522,12 @@ footer {
   font-style: normal;
 }
 
+@media screen and (max-width: 1200px) {
+  header {
+    padding: 0px;
+  }
+}
+
 @media screen and (max-width: 996px) {
   .header {
     padding: 0;
@@ -530,6 +541,15 @@ footer {
   }
   .header-block__img {
     display: none;
+  }
+  .button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
   }
   .content-box_vidoe-tile {
     display: -webkit-box;
@@ -558,6 +578,12 @@ footer {
   .podcast-box__name {
     width: 165px;
   }
+  .header-block {
+    padding-right: 6px;
+  }
+  .case-header {
+    overflow: hidden;
+  }
   .case-header__title {
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -571,9 +597,9 @@ footer {
   }
   .case-header__all {
     display: none;
+    white-space: nowrap;
   }
   .mobile-header {
-    width: 30%;
     display: inherit;
   }
   button {
@@ -584,6 +610,12 @@ footer {
   }
   .content-box__doc-icon {
     padding-right: 9px;
+  }
+  .content-box__number {
+    padding-right: 8px;
+  }
+  .content-box_doc {
+    padding: 32px 0px 40px 0;
   }
   footer {
     display: none;
