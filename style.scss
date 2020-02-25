@@ -1,0 +1,476 @@
+@mixin Monserrat-font($font-size: 15px, $color: #555555, $font-weight: normal, $line-height: auto, $letter-spacing: auto) {
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-size;
+    color: $color;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+
+    font-stretch: normal;
+    font-style: normal;
+}
+
+@mixin regular-font() {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
+    color: #555555;
+}
+
+@mixin h3-font() {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: 0.38px;
+    color: #000000;
+}
+
+@mixin h3-font-mobile() {
+    @include h3-font();
+    font-size: 18px;
+}
+
+@mixin regular-font-mobile() {
+    @include regular-font();
+    font-size: 15px;
+}
+
+
+
+body {
+    margin: 0;
+    width: 100%;
+    background-color: #fff;
+    min-width: 320px;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 64px;
+    border-bottom: 1px solid #dddddd;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &__logo {
+        @include Monserrat-font(24px, #000000, 600, 1.33);
+        //overflow: hidden;
+        height: 25px;
+    }
+
+}
+
+.header-block {
+    display: flex;
+    align-items: center;
+    padding-right: 32px;
+    cursor: pointer;
+    @include Monserrat-font(16px, #999999, -weight, 1.5, 0.25);
+
+    &__img {
+        width: 28px;
+        height: 28px;
+        border-radius: 90px;
+        cursor: pointer;
+    }
+
+    &__text {
+        padding-left: 9px;
+    }
+
+}
+
+.menu {
+    display: none;
+}
+
+.header-block_right {
+    padding: 0;
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+button {
+    height: 40px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 9px 35px 7px 24px;
+
+
+    @include Monserrat-font(16px, #000000, -weight, 1.6, 0.4px);
+
+    &:hover {
+        background-color: #ffc501;
+        color: #000000;
+    }
+
+    .icon-in-btn {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
+}
+
+.button_with-icon {
+    padding: 0 28px 0 16px;
+}
+
+.main__title {
+    max-width: 563px;
+    @include Monserrat-font(42px, #000000, 600, normal);
+
+    span {
+        color: #ffc501;
+    }
+}
+
+.suggestions {
+    padding: 40px 0 80px 0;
+
+    &__title {
+        @include Monserrat-font($line-height: 1.6, $letter-spacing: 0.4px)
+    }
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-container__btn {
+    margin: 4px 0px;
+    margin-right: 16px;
+}
+
+.case-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &__title {
+        @include h3-font();
+    }
+
+    &__all {
+        @include regular-font();
+        color: #000000;
+        background: linear-gradient(to top, #fff3cc, #fff);
+        cursor: pointer;
+    }
+}
+
+.mobile-header {
+    display: none;
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    border-top: #dddddd solid 1px;
+    padding: 32px 0 40px 0;
+
+    &__text {
+        max-width: 760px;
+        padding-top: 8px;
+        display: flex;
+
+        @include regular-font();
+    }
+
+    &__icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        opacity: 0.33;
+        padding-right: 16px;
+    }
+
+    &__link {
+        display: flex;
+    }
+
+    &__doc-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    &__number {
+        padding-left: 16px;
+        padding-right: 26px;
+        @include regular-font();
+    }
+}
+
+.active-icon {
+    opacity: 1;
+}
+
+.content-box_doc {
+    padding: 32px 0px 40px 16px;
+}
+
+.tile {
+    width: 236px;
+    height: 250px;
+    border-radius: 6px;
+
+    &__description {
+        padding: 12px 8px 8px 8px;
+        @include regular-font();
+    }
+
+    &:hover {
+        background-color: #f7f7f7;
+
+        .video {
+            &__play {
+                display: flex;
+            }
+        }
+    }
+}
+
+.video {
+    height: 138px;
+    position: relative;
+    // background-image: url(./src/rectangle-copy-2@3x.png);
+    background-size: cover;
+    margin: 8px;
+
+    &__star {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        cursor: pointer;
+    }
+
+    &__play {
+        display: none;
+        position: absolute;
+        top: calc(50% - 24px);
+        right: calc(50% - 24px);
+        width: 48px;
+        height: 48px;
+        background-color: #ffc501;
+        //display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 90%;
+        cursor: pointer;
+    }
+
+    &__time {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        @include Monserrat-font($color:#ffffff, $font-weight: 600, $line-height: 1.6, $letter-spacing: 0.4px)
+    }
+
+}
+
+.video_bg1 {
+    background-image: url(./src/rectangle-copy@3x.png);
+}
+
+.video_bg2 {
+    background-image: url(./src/rectangle-copy-2@3x.png);
+}
+
+.video_bg3 {
+    background-image: url(./src/rectangle-copy-3@3x.png);
+}
+
+.podcast-box {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+
+    &__name {
+        width: 546px;
+        @include regular-font();
+    }
+
+    &__time {
+        @include regular-font();
+    }
+}
+
+.content-box_podcast {
+    &:hover {
+        background-color: #f7f7f7;
+    }
+
+}
+
+.link-description {
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+        max-width: 808px;
+        @include regular-font();
+    }
+
+    &__link {
+        display: flex;
+        padding-top: 8px;
+        @include Monserrat-font(13px, #999999, normal, 1.54, 0.35px)
+    }
+}
+
+.doc-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 89%;
+
+
+    &__text {
+        max-width: 727px;
+        @include regular-font();
+    }
+
+    &__time {
+        padding-top: 8px;
+        @include Monserrat-font(13px, #999999, normal, 1.54, 0.35px)
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 64px 16px 64px;
+
+    @include Monserrat-font(12px, #999999, -weight, 2, 0.32)
+}
+
+.link-container {
+    &__link {
+        cursor: pointer;
+        border-right: #f3f3f3 solid 1px;
+        padding-left: 8px;
+        padding-right: 8px;
+        @include Monserrat-font(12px, #999999, -weight, 2, 0.32)
+    }
+}
+
+@media screen and (max-width: 996px) {
+
+    .header {
+        padding: 0;
+    }
+
+    .header-block {
+
+        &__text {
+            display: none;
+        }
+
+    }
+
+    .menu {
+        display: initial;
+        margin-right: 13px;
+    }
+
+    .header-block__img {
+        display: none;
+    }
+
+    .content-box_vidoe-tile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tile {
+        width: 280px;
+        height: 250px;
+    }
+
+    .link-description {
+        width: 90%;
+        overflow: hidden;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+    @mixin h3-font() {
+        font-size: 18px;
+    }
+    
+    .header {
+        &__logo {
+            font-size: 18px;
+        }
+    }
+
+    .podcast-box {
+        &__name {
+            width: 165px;
+        }
+    }
+
+    .case-header {
+        &__title {
+            @include h3-font-mobile();
+        }
+
+        &__all {
+            display: none;
+        }
+    }
+
+    .mobile-header {
+        width: 30%;
+        display: inherit;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    .content-box {
+        &__text {
+            width: 90%;
+        }
+
+        &__doc-icon {
+            padding-right: 9px;
+        }
+    }
+
+    footer {
+        display: none;
+    }
+
+}
