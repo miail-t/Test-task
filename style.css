@@ -310,7 +310,18 @@ button .icon-in-btn {
   background-color: #f7f7f7;
 }
 
+.tile:hover .video:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
 .tile:hover .video__play {
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

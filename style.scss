@@ -59,7 +59,7 @@ a {
     text-decoration: none;
 }
 
-header{
+header {
     padding: 0 64px;
 }
 
@@ -69,10 +69,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     border-bottom: 1px solid #dddddd;
     overflow: hidden;
     white-space: nowrap;
+
     &__logo {
         @include Monserrat-font(24px, #000000, 600, 1.33);
         //overflow: hidden;
@@ -255,7 +256,18 @@ button {
         background-color: #f7f7f7;
 
         .video {
+            &:after {
+                content: "";
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 1;
+            }
+
             &__play {
+                z-index: 2;
                 display: flex;
             }
         }
@@ -299,6 +311,8 @@ button {
     }
 
 }
+
+
 
 .video_bg1 {
     background-image: url(./src/rectangle-copy@3x.png);
@@ -388,7 +402,7 @@ footer {
 }
 
 @media screen and (max-width: 1200px) {
-    header{
+    header {
         padding: 0px;
     }
 }
